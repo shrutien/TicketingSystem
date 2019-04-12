@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block ticket_selected_tab %} class="active" {% endblock %}
+{% block content %}
+
+{% if data %}
+<div class=' col-md-11'>
+
+<table class="table table-condensed table-striped">
+<thead>
+<tr style="text-align: left;">
+<th style="border: none !important;">
+</th>
+<td><b>Project Name</b></td>
+<td><b>Issue Type</b></td>
+<td><b>Description</b></td>
+<td><b>Label</b></td>
+</tr>
+</thead>
+<tbody>
+{%for q in data%}
+<tr style="text-align: left;" class="">
+<td >
+</td>
+<td>{{ q.project_name }}</td>
+<td>{{ q.issue_type }}</td>
+<td>{{ q.description}}</td>
+<td>{{ q.label}}</td>
+{% endfor %}
+</tr>
+</tbody>
+</table>
+{% endif %}
+
+</div>
+
+
+{% endblock %}
